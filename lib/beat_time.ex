@@ -34,6 +34,17 @@ defmodule BeatTime do
     %BeatTime{value: beats}
   end
 
+  @doc """
+  Returns the text representation of a .beat time.
+
+  ## Examples
+
+      iex> BeatTime.now() |> BeatTime.format()
+      "@300"
+  """
+  @spec format(BeatTime.t(integer)) :: String.t()
+  def format(beat_time), do: "@#{beat_time.value}"
+
   defp to_date_tuple(datetime), do: {datetime.year, datetime.month, datetime.day}
 
   defp seconds_to_beats(seconds), do: (seconds * 1000) |> div(@beat)
