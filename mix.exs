@@ -29,7 +29,8 @@ defmodule BeatTime.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:dumballah, "~> 2.3"}
+      {:dumballah, "~> 2.3"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
