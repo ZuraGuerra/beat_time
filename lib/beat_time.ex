@@ -1,18 +1,25 @@
 defmodule BeatTime do
   @moduledoc """
-  Documentation for BeatTime.
+  Utilities to work with Swatch Internet Time (.beat time).
+
+  * Every day has 1000.beats.
+  * Every .beat has 86_400 milliseconds.
+  * There's no notion of time zones: it's an universal time system based on UTC+01.
   """
+  defstruct value: 0
+  @type t(value) :: %BeatTime{integer}
 
   @doc """
-  Hello world.
+  Returns the current .beat time.
 
   ## Examples
 
-      iex> BeatTime.hello()
-      :world
-
+      iex> BeatTime.now()
+      %BeatTime{300}
   """
-  def hello do
-    :world
+  @spec now() :: BeatTime.t(integer)
+  def now() do
+    
   end
+
 end

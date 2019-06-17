@@ -1,0 +1,3 @@
+%{
+  "dumballah": {:hex, :dumballah, "2.3.0", "a5b7400a280f352ec7e5c078aa53845e2ac8d49ca5661d11fed723c4a739e18f", [:mix], [], "hexpm"},
+}
