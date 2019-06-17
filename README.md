@@ -1,21 +1,27 @@
-# BeatTime
+# .beat Time
 
-**TODO: Add description**
+Utilities to work with [Swatch Internet Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time) (.beat time).
+
+* Every day has 1000.beats.
+* Every .beat has 86_400 milliseconds.
+* There's no notion of time zones: it's an universal time system based on UTC+01.
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `beat_time` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:beat_time, "~> 0.1.0"}
+    {:beat_time, "~> 1.0.0"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/beat_time](https://hexdocs.pm/beat_time).
+## Usage
 
+```elixir
+  iex> BeatTime.now()
+  %BeatTime{value: 300}
+
+  iex> BeatTime.now() |> BeatTime.format()
+  "@300"
+```
