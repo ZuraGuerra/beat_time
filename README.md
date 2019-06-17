@@ -1,6 +1,7 @@
 # .beat Time
 
 [![Hex version](https://img.shields.io/hexpm/v/beat_time.svg)](https://hex.pm/packages/beat_time)
+[![Hex license](https://img.shields.io/hexpm/l/beat_time.svg)](https://hex.pm/packages/beat_time)
 
 Utilities to work with [Swatch Internet Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time) (.beat time).
 
