@@ -4,10 +4,14 @@ defmodule BeatTime.MixProject do
   def project do
     [
       app: :beat_time,
-      version: "0.1.0",
+      name: ".beat Time",
+      version: "1.0.0",
+      source_url: "https://github.com/ZuraGuerra/beat_time",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package(),
+      description: description()
     ]
   end
 
@@ -18,10 +22,24 @@ defmodule BeatTime.MixProject do
     ]
   end
 
+  defp description do
+    "Utilities to work with Swatch Internet Time (.beat time)."
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:dumballah, "~> 2.3"}
+    ]
+  end
+
+  defp package do
+    [
+      licenses: ["MIT"],
+      maintainers: ["Zura Guerra"],
+      links: %{
+        "Github" => "https://github.com/ZuraGuerra/beat_time"
+      }
     ]
   end
 end
