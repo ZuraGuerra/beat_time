@@ -3,7 +3,7 @@ defmodule BeatTimeTest do
   doctest BeatTime
 
   test "returns time in beats" do
-    unix_time = 1560794022
+    unix_time = 1_560_794_022
     expected_beats = 787
 
     assert BeatTime.to_beats(unix_time) == %BeatTime{value: expected_beats}
