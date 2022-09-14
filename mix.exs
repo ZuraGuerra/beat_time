@@ -5,9 +5,9 @@ defmodule BeatTime.MixProject do
     [
       app: :beat_time,
       name: ".beat Time",
-      version: "1.0.0",
+      version: "1.1.0",
       source_url: "https://github.com/ZuraGuerra/beat_time",
-      elixir: "~> 1.8",
+      elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
@@ -29,7 +29,6 @@ defmodule BeatTime.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:dumballah, "~> 2.3"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end

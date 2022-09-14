@@ -17,7 +17,7 @@ defmodule BeatTime do
   @spec now() :: BeatTime.t(integer)
   def now() do
     DateTime.utc_now()
-    |> Dumballah.Convert.to_unix()
+    |> DateTime.to_unix()
     |> to_beats()
   end
 
@@ -26,9 +26,10 @@ defmodule BeatTime do
   """
   @spec to_beats(integer) :: BeatTime.t(integer)
   def to_beats(current) do
+
     beats =
       current
-      |> Dumballah.Calculate.add_time(:hours, 1) # UTC+01
+      |> Kernel.+(3600) # UTC+01
       |> calculate_seconds_since_midnight()
       |> Kernel.*(1000)
       |> div(@beat)
@@ -42,15 +43,12 @@ defmodule BeatTime do
   @spec format(BeatTime.t(integer)) :: String.t()
   def format(beat_time), do: "@#{beat_time.value}"
 
-  defp to_date_tuple(datetime), do: {datetime.year, datetime.month, datetime.day}
-
   defp calculate_seconds_since_midnight(unix_time) do
-    day_start =
+    {seconds_since_midnight, _} =
       unix_time
-      |> Dumballah.Convert.from_unix()
-      |> to_date_tuple()
-      |> Dumballah.Calculate.date_from_dawn()
+      |> DateTime.from_unix!()
+      |> Time.to_seconds_after_midnight()
 
-    unix_time - day_start
+    seconds_since_midnight
   end
 end
